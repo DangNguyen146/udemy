@@ -1,0 +1,37 @@
+@mixin styleText($fs, $color, $fw) {
+    font-size: $fs;
+    color: $color;
+    font-weight: $fw;
+}
+
+@mixin styleButton($bg-color, $border, $py, $px) {
+    background-color: $bg-color;
+    border: 1px solid $border;
+    padding: $py $px;
+    border-radius: $border-radius;
+    // C1
+    // &:hover {}
+    transition: all 0.5s;
+}
+
+@mixin styleHoverButton($bg-hover, $boder-hover, $color-hover) {
+    background-color: $bg-hover;
+    border-color: $boder-hover;
+    color: $color-hover;
+}
+
+// $screen chứ kich thuoc man hinh
+@mixin responsive($screen) {
+    @if(map-has-key($map: $breakpoints, $key: $screen)) {
+        //nếu tìm thấy màn hình
+        //map-get: láy giá trị màn hình
+        //value chua ket qua lay duoc
+        $value: map-get($map: $breakpoints, $key: $screen);
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }
+    @else {
+        @warn"Man hình ko tồn tại";
+    }
+}

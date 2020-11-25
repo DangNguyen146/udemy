@@ -1,0 +1,408 @@
+.gradian {
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, rgb(100, 91, 83) 0%, rgb(235, 82, 82) 18.23%, rgb(247, 143, 47) 34.37%, rgb(244, 193, 81) 48.96%, rgb(82, 187, 118) 66.15%, rgb(38, 165, 215) 82.29%, rgb(224, 105, 183) 100%);
+}
+
+header {
+    @include styleText($fs-1, $color-black-light, $fw-normal);
+    .header__left {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .navbar-brand {
+            img {
+                width: 110px;
+            }
+        }
+        .header__form {
+            flex-grow: 1;
+        }
+    }
+    .mr-auto {
+        align-items: center;
+        justify-content: space-around;
+    }
+    .header__right {
+        .nav-link {
+            @include styleText($fs-1, $color-black-light, $fw-normal);
+        }
+    }
+    .d-md-none i {
+        color: $color-gray-4;
+        font-size: 1rem;
+        padding: 0 5px;
+    }
+}
+
+// udeCarousel
+.udeCarousel {
+    background: url(../../img/cover.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+}
+
+.input-group .btn,
+.input-group .form-control {
+    background-color: $color-gray-1;
+    border: none;
+    transition: all 0.5s;
+}
+
+.input-group {
+    .form-control::placeholder {
+        font-size: 13px;
+    }
+    .btn {
+        color: $color-red-0;
+    }
+    .btn:hover {
+        background-color: $color-red-0;
+        color: $color-white-0;
+    }
+    .btn {
+        margin-left: 1px;
+    }
+    .btn:focus,
+    .form-control:focus {
+        box-shadow: none;
+    }
+}
+
+.udeCarousel {
+    position: relative;
+    .container .udeCarousel__content {
+        position: absolute;
+        top: 50%;
+        // left: 50%;
+        transform: translateY(-50%);
+        h2 {
+            width: 75%;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        p {
+            width: 75%;
+            font-size: 1.3rem;
+        }
+        .input-group {
+            width: 75%;
+            border-radius: 4px;
+            align-items: center;
+            text-align: center;
+            input {
+                padding: 11px 12px;
+                background-color: $color-white-0;
+                border: 1px solid $color-white-0;
+            }
+            input::placeholder {
+                font-size: 1.3rem;
+                font-weight: 300;
+            }
+            .btn {
+                background-color: none;
+            }
+        }
+    }
+}
+
+// review
+.review {
+    background: linear-gradient(-45deg, #EC5252 0%, #6E1A52 100%);
+    width: 100%;
+    color: $color-white-0;
+    font-weight: 600;
+    .review__howudemy {
+        .howudemy__item {
+            span {
+                float: left;
+                font-size: 3rem;
+                padding: 0 1rem;
+            }
+            .howudemy__text {
+                float: left;
+                b {
+                    font-size: 1.5rem;
+                }
+                p {
+                    font-weight: 500;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.services {
+    background-color: $color-gray-1;
+    width: 100%;
+}
+
+// services
+.services {
+    background-color: $color-gray-1;
+    .services__item {
+        display: flex;
+        float: left;
+        align-items: flex-start;
+        padding: 1rem 0;
+        // background-color: $color-white-0;
+    }
+    .services__icon {
+        font-size: 2rem;
+        padding: 0 2rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    p {
+        padding: none;
+    }
+}
+
+//responsive
+//max-width: 1200px
+@include responsive('extra-large') {
+    .header__right {
+        .bussiness,
+        .teach {
+            display: none;
+        }
+    }
+    .review {
+        .review__howudemy {
+            .howudemy__item {
+                span {
+                    display: none;
+                }
+                .howudemy__text {
+                    b {
+                        font-size: 1.3rem;
+                    }
+                    p {
+                        font-size: 1rem;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.intro {
+    .row {
+        .intro__item {
+            background-color: $color-gray-1;
+            width: 100%;
+            height: 100%;
+            font-size: 1rem;
+            display: flex;
+            flex: 1 0 auto;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .col-9 {
+            .nav-item {
+                .active {
+                    border-bottom: 5px solid $color-blue;
+                }
+                a {
+                    border: none;
+                    color: $color-black-0;
+                }
+            }
+        }
+        .text-right {
+            margin-bottom: 0;
+        }
+        .intro__navitem img {
+            width: 100%;
+            height: 100%;
+        }
+        .intro__navitem {
+            border: 4px solid $color-gray-1;
+            width: 100%;
+            margin: 0 1rem;
+            height: auto;
+        }
+        h3 {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+// student
+.student {
+    .student__item {
+        text-align: start;
+        background-color: $color-white-0;
+        border: 1px solid $color-gray-1;
+        padding: 0.5rem 0.5rem;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        .student__text {
+            h2 {
+                font-size: 1rem;
+                font-weight: 600;
+                height: 25%;
+            }
+            p {
+                padding: none;
+            }
+            span {
+                padding: none;
+            }
+        }
+    }
+}
+
+// banner
+.banner {
+    background-color: $color-black-0;
+    padding: 1rem 0rem;
+    .container {
+        align-items: center;
+        text-align: center;
+        color: $color-white-0;
+        justify-content: space-around;
+        i {
+            font-size: 1.5rem;
+            padding: 1rem;
+        }
+        .banner__sercond {
+            .row {
+                align-items: center;
+            }
+        }
+    }
+}
+
+// Topcategories
+.Topcategories {
+    .Topcategories__item {
+        padding: 1rem 2rem;
+        margin: 0.5rem;
+        border: 1px solid $color-gray-4;
+        background-color: $color-white-cream;
+        transition: all 0.5s;
+        &:hover {
+            background-color: $color-white-0;
+        }
+    }
+}
+
+// feedback
+.feedback {
+    background-color: $color-gray-1;
+    padding: 1.5rem 0;
+    h2 {
+        font-weight: 600;
+    }
+    .feedback__content {
+        background-color: $color-white-0;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+    }
+}
+
+// compaines
+.compaines {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: $color-gray-1;
+    .compiaines__fisrt {
+        text-align: center;
+    }
+    .compaines__sercord {
+        text-align: center;
+        justify-content: space-around;
+    }
+    .compaines__sercord {
+        text-align: center;
+        align-items: center;
+        padding: 1rem 0;
+    }
+}
+
+footer {
+    color: #003845;
+    .footer__contant .btn-group {
+        float: right;
+    }
+    .footer__end {
+        justify-content: space-around;
+    }
+    img {
+        width: 100px;
+    }
+    .c span {
+        float: right;
+    }
+}
+
+@include responsive("large") {
+    .container__none {
+        display: none;
+    }
+    .dnone {
+        display: none;
+    }
+}
+
+//max-width:768px
+@include responsive("medium") {
+    .header__right {
+        .ude-btnGroup {
+            display: none;
+        }
+    }
+    .header__left {
+        justify-content: center;
+        .cate,
+        .header__form {
+            display: none;
+        }
+    }
+    .review {
+        display: none;
+    }
+    .banner .container {
+        i {
+            display: none;
+        }
+    }
+}
+
+@include responsive("small") {
+    .udeCarousel {
+        height: 300px;
+        .container .udeCarousel__content {
+            h2 {
+                font-size: 1.8rem;
+                font-weight: 500;
+                width: 50%;
+            }
+            p {
+                font-size: 1.1rem;
+                width: 50%;
+            }
+            button {
+                width: 100%;
+            }
+            .input-group .form-control::placeholder {
+                font-size: 1rem;
+            }
+        }
+    }
+    footer {
+        .footer__item {
+            display: none;
+        }
+    }
+}
